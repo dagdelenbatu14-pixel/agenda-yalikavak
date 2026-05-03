@@ -133,13 +133,13 @@
   .reserve-content{position:relative;z-index:1;max-width:700px;margin:0 auto;}
   .reserve-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;margin-bottom:16px;}
   .reserve-sub{font-size:.85rem;color:var(--text-light);line-height:1.8;margin-bottom:48px;font-weight:300;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-  .form-field{display:flex;flex-direction:column;gap:8px;text-align:left;}
-  .form-field label{font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:500;}
-  .form-field input,.form-field select{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);color:var(--white);padding:14px 18px;font-family:'Montserrat',sans-serif;font-size:.8rem;outline:none;transition:border .3s;-webkit-appearance:none;}
-  .form-field input:focus,.form-field select:focus{border-color:var(--gold);}
-  .form-field select option{background:var(--dark3);color:var(--white);}
-  .form-note{font-size:.68rem;color:var(--text-light);margin-top:8px;margin-bottom:24px;font-style:italic;}
+  .reserve-phone{display:inline-flex;flex-direction:column;align-items:center;gap:14px;text-decoration:none;padding:40px 70px;border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.04);transition:all .35s ease;cursor:pointer;}
+  .reserve-phone:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 44px rgba(201,168,76,.28);}
+  .reserve-phone:hover .phone-eyebrow,.reserve-phone:hover .phone-number{color:var(--dark);}
+  .phone-eyebrow{font-size:.62rem;letter-spacing:6px;text-transform:uppercase;color:var(--gold);font-weight:600;transition:color .35s;}
+  .phone-number{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:300;color:var(--white);letter-spacing:3px;transition:color .35s;line-height:1;}
+  .phone-hint{margin-top:24px;font-size:.7rem;color:var(--text-light);font-style:italic;font-weight:300;}
+  @media(max-width:600px){.reserve-phone{padding:28px 32px;}.phone-number{letter-spacing:2px;}}
 
   #location{background:var(--dark3);display:grid;grid-template-columns:1fr 1fr;gap:0;}
   .loc-info{padding:100px 80px;display:flex;flex-direction:column;justify-content:center;}
@@ -334,20 +334,11 @@
     <div class="section-tag">Rezervasyon</div>
     <h2 class="reserve-title">Bu Gece<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic">Masanızı Ayırtın</em></h2>
     <p class="reserve-sub">Walk-in misafirleri memnuniyetle karşılıyoruz; ancak özellikle deniz manzaralı masalar için önceden rezervasyon yaptırmanızı tavsiye ederiz.</p>
-    <div class="form-row">
-      <div class="form-field"><label>Ad Soyad</label><input type="text" placeholder="Adınız"/></div>
-      <div class="form-field"><label>Telefon / WhatsApp</label><input type="tel" placeholder="+90 …"/></div>
-    </div>
-    <div class="form-row">
-      <div class="form-field"><label>Tarih</label><input type="date"/></div>
-      <div class="form-field"><label>Saat</label><select><option>12:00 – Öğle Yemeği</option><option>13:00</option><option>14:00</option><option>19:00 – Akşam Yemeği</option><option>20:00</option><option>21:00</option><option>22:00</option><option>23:00</option></select></div>
-    </div>
-    <div class="form-row">
-      <div class="form-field"><label>Kişi Sayısı</label><select><option>1 Kişi</option><option>2 Kişi</option><option>3 Kişi</option><option>4 Kişi</option><option>5–6 Kişi</option><option>7–10 Kişi</option><option>Büyük Grup (10+)</option></select></div>
-      <div class="form-field"><label>Masa Tercihi</label><select><option>Deniz Manzaralı Teras</option><option>İç Mekan</option><option>Fark Etmez</option></select></div>
-    </div>
-    <p class="form-note">* Ekibimiz rezervasyonunuzu telefon veya WhatsApp ile en kısa sürede onaylayacaktır.</p>
-    <button class="btn-primary" style="width:100%;padding:18px;" onclick="alert('Teşekkürler! Rezervasyonunuzu en kısa sürede onaylayacağız. 🌊')">Rezervasyon Talebi Gönder</button>
+    <a href="tel:+902523850000" class="reserve-phone">
+      <span class="phone-eyebrow">Hemen Ara</span>
+      <span class="phone-number">+90 252 385 00 00</span>
+    </a>
+    <p class="phone-hint">Numaraya dokunarak doğrudan arama başlatın</p>
   </div>
 </section>
 
